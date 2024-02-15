@@ -119,7 +119,8 @@ main {
     padding-left: 10px;
 }
 
-#cover-text > h2, #cover-text > h3 {
+#cover-text>h2,
+#cover-text>h3 {
     color: #ffffff
 }
 
@@ -129,7 +130,7 @@ main {
     margin: 20px auto;
 }
 
-#reasons > h2 {
+#reasons>h2 {
     font-size: 280%;
     margin-bottom: 20px;
     text-align: center;
@@ -144,7 +145,8 @@ main {
     padding: 0 20px;
 }
 
-#benefits-physical > div, #benefits-mental > div {
+#benefits-physical>div,
+#benefits-mental>div {
     line-height: 20px;
     margin-bottom: 20px;
 }
@@ -158,7 +160,6 @@ main {
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
-
 }
 
 #benefits-image {
@@ -175,7 +176,6 @@ main {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
-
 }
 
 #social-networks i {
@@ -212,7 +212,6 @@ main {
         font-size: 280%;
         line-height: 75px;
         margin: 0 0.5rem;
-
     }
 
     /* Main content */
@@ -223,9 +222,25 @@ main {
 
     /* Hero Image */
     #cover-text {
-    width: 300px;
-    right: 50px;
-}
+        width: 300px;
+        right: 50px;
+    }
+
+    /* Reasons section */
+    #benefits-physical, #benefits-mental {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    #benefits-physical > div, #benefits-mental > div {
+        width: 75%;
+    }
+
+    #benefits-mental > div {
+        text-align: end;
+        align-self: flex-end;
+    }
 }
 
 /* Media query: laptops and larger (992px and up) */
@@ -235,4 +250,34 @@ main {
     #menu a:hover {
         border-bottom: 1px solid #3a3a3a;
     }
+}
+
+/* Media query: wider screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+
+    #benefits {
+        display: flex;
+        flex-direction: row;
+    }
+
+    #benefits > div  {
+        flex: 1;
+    }
+
+    #benefits-mental {
+        order: 1;
+    }
+
+    #benefits-image {
+        order: 0;
+    }
+
+    #benefits-physical > div {
+        align-self: flex-start;
+    }
+
+    #benefits-mental > div {
+        align-self: flex-end;
+    }
+
 }
